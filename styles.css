@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+* {
+scrollbar-width: thin;
+scrollbar-color: #745fdd #ffffff;
+}
+*::-webkit-scrollbar {
+width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #745fdd;
+border-radius: 10px;
+border: 3px solid #ffffff;
+}
+.dark{
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.dark {
+scrollbar-color: #506ff8 #111;
+}
+
+.dark::-webkit-scrollbar-track {
+background: #111;
+}
+
+.dark::-webkit-scrollbar-thumb {
+background-color: #745fdd;
+border: 3px solid #111;
+}
+
+
+nav .logo{
+    display: flex;
+    gap: 10px;
+}
+.toggle{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Toggle button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 49px;
+    height: 24px;
+}  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9e9e9e;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 23px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.dark .slider:before{
+    background-color: black;
+}
+input:checked + .slider {
+    background-color: #9ad1ff;  
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #9ad1ff;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: rgb(77, 60, 119);
+  border-radius: 15px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin-left: 1.5rem;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button:disabled {
+  cursor: default;
+}
+button:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+button:hover{
+    background-color: rgb(225, 152, 152);
+    color: black;
+}
+nav{
+    padding: 0.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.411);
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+}
+.dark nav{
+    background-color: #191b1d;
+}
+.dark nav h2{
+    color: white;
+}
+.booksContainer{
+    display: flex;
+}
+aside{
+    width: 27%;
+    min-width: 200px;
+    height: 90vh;
+    overflow-y: scroll;
+    /* border: 2px solid red; */
+}
+.dark aside {
+scrollbar-color: #506ff8 #111;
+}
+
+.dark aside::-webkit-scrollbar-track {
+background: #111;
+}
+
+.dark aside::-webkit-scrollbar-thumb {
+background-color: #745fdd;
+border: 3px solid #111;
+}
+main{
+    width: 73%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.bookCotainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+}
+
+.categories{
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size:18px;
+    color: rgba(0, 0, 0, 0.562);
+
+    /* text-transform: capitalize; */
+}
+.dark .categories{
+    color: rgb(109, 108, 108);
+}
+.categories:hover{
+    color:rgb(79, 46, 232);
+    cursor: pointer;
+}
+.dark .categories:hover{
+    color:rgb(223, 108, 55);
+    cursor: pointer;
+}
+.book{
+    position: relative;
+    width: 225px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    transition: transform 0.5s;
+}
+.view{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(233, 184, 36);
+    position: absolute;
+    bottom: 90px;
+    overflow: hidden;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.7s ease-in-out;
+    opacity: 0;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+}
+.book:hover .view{
+    opacity: 1;
+}
+.bookImage{
+   width: 100%;
+   height:260px;
+   border-top-right-radius: 15px;
+   border-top-left-radius: 15px;   
+}
+.book:hover{
+    transform: scale(1.1);
+}
+.bookTitle{
+    text-transform: uppercase;
+    color: #111;
+    margin: 4px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+.dark .bookTitle{
+    color: white;
+}
+.bookAuthor{
+    color: #9b9a9a;
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 4px;
+}
+#catagory-name{
+    font-size:48px;
+    margin-bottom: 2rem;
+}
+.dark #catagory-name{
+    color: white;
+}
+#catagory-name:after{
+	content:attr(data-text);
+	color:rgb(79,46,232);
+	transform:translateX(-100%);
+	position:absolute;
+}
+.mydialog {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: grid;
+    height: 100vh;
+    max-height: none;
+    width: 100%;
+    max-width: none;
+    justify-items: center;
+    opacity: 0;
+    overscroll-behavior: contain;
+    z-index: 999;
+    background-color: transparent;
+    color: inherit;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-property: transform, opacity, visibility;
+    overflow-y: hidden;
+    place-items: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.mydialog[open] {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+}
+.modal{
+    height: 410px;
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: 30px;
+    padding: 2rem;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    position: relative;
+}
+.modalContent {
+    display: flex;
+    gap: 30px;
+}
+.content{
+    height: 250px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content h1{
+    font-size:24px;
+}
+.contentAuthor{
+    color: #9b9a9a;
+    font-size: 14px;
+    font-style: italic;
+}
+.bookdescription{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.links{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.links a{
+    color: black;
+}
+.links a:active{
+    color: rgb(255, 124, 124);
+}
+.links a:focus{
+    color: rgb(255, 124, 124);
+}
+.img img{
+    width: 250px;
+    height: 250px;
+}
+.modal button{
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 2rem;
+    font-weight: 600;
+}
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.sample-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.sample{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.sampleTitle{
+    /* text-align: center; */
+    width: 100%;
+    margin-bottom: -20px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: #b4afaf;
+    font-size: 14px;
+    display: block;
+}
